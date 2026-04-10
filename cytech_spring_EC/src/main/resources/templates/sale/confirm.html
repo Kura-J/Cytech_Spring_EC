@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{common/layout :: layout(~{::title}, ~{::body/content()}, ~{::head})}">
+
+<head>
+	<meta charset="UTF-8">
+	<title>購入品確認画面</title>
+	<link th:href="@{/css/sale.css}" rel="stylesheet">
+</head>
+
+<body>
+	<main class="sale-confirm">
+		<p class="sale-confirm__title">購入品確認画面</p>
+		
+		<div class="sale-confirm__content">
+			<p>名前：</p>
+			<p>住所：</p>
+			<p>アパート名：</p>
+			<p>商品名：</p>
+			<p>個数：</p>
+			<p>合計金額：</p>
+		</div>
+		
+		<div class="sale-confirm__buttons">
+			<a href="#" class="sale-confirm__button--edit">編集</a>
+			<a href="#" class="sale-confirm__button--purchase">購入</a>
+		</div>
+	</main>
+</body>
+</html>

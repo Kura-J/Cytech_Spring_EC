@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{common/layout :: layout(~{::title}, ~{::body/content()}, ~{::head})}">
+
+<head>
+	<meta charset="UTF-8">
+	<title>購入品詳細画面</title>
+	<link th:href="@{/css/sale.css}" rel="stylesheet">
+</head>
+
+<body>
+	<main class="sale-detail">
+		<p class="sale-detail__title">購入品詳細画面</p>
+		
+		<div class="sale-detail__address">
+			<p class="sale-detail__address-title">＜受け取り場所＞</p>
+			
+			<div class="sale-detail__address-box">
+				<input type="radio" name="address" checked>
+				
+				<div class="sale-detail__address-content">
+					<p>名前：</p>
+					
+					<label>住所</label>
+					<input type="text" placeholder="住所">
+					
+					<label>アパート名等</label>
+					<input type="text" placeholder="アパート名等">
+				</div>
+			</div>
+			
+			<div class="sale-detail__address-box">
+				<input type="radio" name="address">
+				
+				<div class="sale-detail__address-content">
+					<p>名前：</p>
+					
+					<label>住所</label>
+					<input type="text" placeholder="住所">
+					
+					<label>アパート名等</label>
+					<input type="text" placeholder="アパート名等">
+				</div>
+			</div>
+		</div>
+		
+		<div class="sale-detail__card">
+			<p class="sale-detail__card-title">＜お支払い情報＞</p>
+			
+			<div class="sale-detail__card-box">
+				<input type="radio" name="card" checked>
+				
+				<div class="sale-detail__card-content">
+					<input type="text" placeholder="カード番号">
+					<input type="text" placeholder="有効期限 DD/YY">
+				</div>
+			</div>
+			
+			<div class="sale-detail__card-box">
+				<input type="radio" name="card">
+				
+				<div class="sale-detail__card-content">
+					<input type="text" placeholder="カード番号">
+					<input type="text" placeholder="有効期限 DD/YY">
+				</div>
+			</div>
+		</div>
+		
+		<div class="sale-detail__button-area">
+			<a href="#" class="sale-detail__button">確認</a>
+		</div>
+	</main>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+	<meta charset="UTF-8">
+	<title>ユーザー新規登録画面</title>
+	<link th:href="@{/css/user.css}" rel="stylesheet">
+</head>
+
+<body>
+	<main class="register">
+		<p class="register__title">ユーザー新規登録画面</p>
+		
+		<div class="register__form">
+			
+			<div class="register__field">
+				<label for="name" class="register__label">ユーザ名</label>
+				<input type="text" id="name" name="name" class="register__input">
+			</div>
+			
+			<div class="register__field">
+				<label for="email" class="register__label">メールアドレス</label>
+				<input type="email" id="email" name="email" class="register__input">
+			</div>
+			
+			<div class="register__field">
+				<label for="password" class="register__label">パスワード</label>
+				<input type="password" id="password" name="password" class="register__input">
+			</div>
+			
+			<div class="register__field">
+				<label for="passwordConfirm" class="register__label">パスワード（確認用）</label>
+				<input type="password" id="passwordConfirm" name="passwordConfirm" class="register__input">
+			</div>
+			
+			<div class="register__buttons">
+				<a href="#" class="register__button register__button--submit">登録</a>
+				<a href="#" class="register__button register__button--back">戻る</a>
+			</div>
+		</div>
+	</main>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

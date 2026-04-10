@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{common/layout :: layout(~{::title}, ~{::body/content()}, ~{::head})}">
+
+<head>
+	<meta charset="UTF-8">
+	<title>カート追加画面</title>
+	<link th:href="@{/css/cart.css}" rel="stylesheet">
+</head>
+
+<body>
+	<main class="cart-add">
+		<p class="cart-add__title">カート追加画面</p>
+		
+		<div class="cart-add__container">
+			
+			<div class="cart-add__img">
+				<img th:src="@{/images/sample1.png}" alt="商品画像">
+			</div>
+			
+			<div class="cart-add__info">
+				<p>商品名：</p>
+				<p>個数：</p>
+				<p>カート内の合計：</p>
+			</div>
+			
+		</div>
+		
+		<div class="cart-add__buttons">
+			<a href="#" class="add-btn cart-add__buttons--left">レジに進む</a>
+			<a href="#" class="add-btn cart-add__buttons--center">カートに移動</a>
+			<a href="#" class="add-btn cart-add__buttons--right">TOP画面に戻る</a>
+		</div>
+	</main>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<header th:fragment="layout-header" class="header">
+		<div class="header-inner">
+			<div class="header-logo">Cytech EC.</div>
+			
+			<div class="header-search">
+				<input type="text" class="search-input" placeholder="商品名">
+				
+				<select class="search-select">
+					<option>ファッション</option>
+				</select>
+				<button class="search-button">検索</button>
+			</div>
+			
+			<div class="header-user">
+				<a href="#" class="header-mypage-button">マイページ</a>
+				<div class="user-info">
+					<p>ユーザ名：tetetetete</p>
+					<a href="#" class="logout-button">ログアウト</a>
+				</div>
+			</div>
+			
+		</div>
+	</header>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{common/layout :: layout(~{::title}, ~{::body/content()}, ~{::head})}">
+
+<head>
+	<meta charset="UTF-8">
+	<title>口コミ投稿画面</title>
+	<link th:href="@{/css/review.css}" rel="stylesheet">
+</head>
+
+<body>
+	<main class="review">
+		<p class="review__title">口コミ投稿画面</p>
+		
+		<div class="review__form">
+			<div class="review__field">
+				<label class="review__label">ユーザー名（任意）</label>
+				<input type="text" class="review__input" placeholder="ユーザー名">
+			</div>
+			
+			<div class="review__field">
+				<label class="review__label">評価</label>
+				<select class="review__select">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+			</div>
+			
+			<div class="review__field">
+				<label class="review__label">メールアドレス</label>
+				<input type="text" class="review__input" placeholder="メールアドレス">
+			</div>
+			
+			<div class="review__field">
+				<label class="review__label">コメント</label>
+				<textarea class="review__textarea"></textarea>
+			</div>
+			
+			<div class="review__field">
+				<input type="file" class="review__file">
+			</div>
+			
+			<div class="review__button-area">
+				<a href="#" class="review__button">投稿</a>
+			</div>
+		</div>
+	</main>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

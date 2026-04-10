@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{common/layout :: layout(~{::title}, ~{::body/content()}, ~{::head})}">
+
+<head>
+	<meta charset="UTF-8">
+	<title>商品一覧</title>
+	<link th:href="@{/css/product.css}" rel="stylesheet">
+</head>
+
+<body>
+	<main class="product-list">
+		<p class="product-list__title">商品一覧画面</p>
+		
+		<div class="product-list__container">
+			
+			<div class="product-list__card">
+				<a href="#">
+					<img th:src="@{/images/sample1.png}" alt="商品1">
+					<div class="product-list__card--content">
+						<p>商品名</p>
+						<p>メーカー名</p>
+						<p>¥2000</p>
+						<p>¥2200(税込)</p>
+					</div>
+				</a>
+			</div>
+			
+			<div class="product-list__card">
+				<a href="#">
+					<img th:src="@{/images/sample2.png}" alt="商品2">
+					<div class="product-list__card--content">
+						<p>商品名</p>
+						<p>メーカー名</p>
+						<p>¥2000</p>
+						<p>¥2200(税込)</p>
+					</div>
+				</a>
+			</div>
+			
+			<div class="product-list__card">
+				<a href="#">
+					<img th:src="@{/images/sample3.png}" alt="商品3">
+					<div class="product-list__card--content">
+						<p>商品名</p>
+						<p>メーカー名</p>
+						<p>¥2000</p>
+						<p>¥2200(税込)</p>
+					</div>
+				</a>
+			</div>
+			
+			<div class="product-list__card">
+				<a href="#">
+					<img th:src="@{/images/sample4.png}" alt="商品4">
+					<div class="product-list__card--content">
+						<p>商品名</p>
+						<p>メーカー名</p>
+						<p>¥2000</p>
+						<p>¥2200(税込)</p>
+					</div>
+				</a>
+			</div>
+			
+			<div class="product-list__card">
+				<a href="#">
+					<img th:src="@{/images/sample5.png}" alt="商品5">
+					<div class="product-list__card--content">
+						<p>商品名</p>
+						<p>メーカー名</p>
+						<p>¥2000</p>
+						<p>¥2200(税込)</p>
+					</div>
+				</a>
+			</div>
+			
+		</div>
+	</main>
+</body>
+</html>

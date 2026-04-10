@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{common/layout :: layout(~{::title}, ~{::body/content()}, ~{::head})}">
+
+<head>
+	<meta charset="UTF-8">
+	<title>購入完了画面</title>
+	<link th:href="@{/css/sale.css}" rel="stylesheet">
+</head>
+
+<body>
+	<main class="sale-complete">
+		<p class="sale-complete__title">購入完了画面</p>
+		
+		<p class="sale-complete__finish">注文完了</p>
+		
+		<div class="sale-complete__content">
+			<p>画像：</p>
+			<p>商品名：</p>
+			<p>数量：</p>
+			<p>税込価格：</p>
+			<p>住所：</p>
+		</div>
+		
+		<div class="sale-complete__button-area">
+			<a href="#" class="sale-complete__button">TOP画面に戻る</a>
+		</div>
+	</main>
+</body>
+</html>

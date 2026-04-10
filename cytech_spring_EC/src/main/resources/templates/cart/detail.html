@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{common/layout :: layout(~{::title}, ~{::body/content()}, ~{::head})}">
+
+<head>
+	<meta charset="UTF-8">
+	<title>カート詳細画面</title>
+	<link th:href="@{/css/cart.css}" rel="stylesheet">
+</head>
+
+<body>
+	<main class="cart-detail">
+		<p class="cart-detail__title">カート詳細画面</p>
+		
+		<div class="cart-detail__container">
+			
+			<div class="cart-detail__item">
+				<div class="cart-detail__img">
+					<img th:src="@{/images/sample1.png}" alt="商品画像">
+				</div>
+				
+				<div class="cart-detail__info">
+					<p>商品名：</p>
+					
+					<label>数量：</label>
+					<select>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+					</select>
+					
+					<a href="#" class="detail-btn btn-delete">削除</a>
+					
+					<p>価格：</p>
+					<p>消費税込み金額：</p>
+				</div>
+			</div>
+			
+			<div class="cart-detail__summary">
+				<p>個数：</p>
+				<p>金額：</p>
+				<p>消費税込み金額：</p>
+				<a href="#" class="detail-btn btn-buy">レジに進む</a>
+			</div>
+			
+		</div>
+	</main>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

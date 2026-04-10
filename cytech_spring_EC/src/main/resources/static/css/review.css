@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+.review {
+	width: 800px;
+	margin: 40px auto;
+}
+
+.review__title {
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.review__form {
+	width: 100%;
+}
+
+.review__field {
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.review__label {
+	margin-bottom: 5px;
+	font-size: 14px;
+}
+
+.review__input,
+.review__textarea,
+.review__select,
+.review__file {
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	font-size: 14px;
+}
+
+.review__textarea {
+	height: 150px;
+	resize: none;
+}
+
+.review__select {
+	width: 100px;
+}
+
+.review__button-area {
+	text-align: center;
+	margin-top: 30px;
+}
+
+.review__button {
+	display: inline-block;
+	padding: 10px 30px;
+	background-color: #2f80ed;
+	color: #fff;
+	border-radius: 8px;
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

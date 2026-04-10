@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{common/layout :: layout(~{::title}, ~{::body/content()}, ~{::head})}">
+
+<head>
+	<meta charset="UTF-8">
+	<title>商品詳細画面</title>
+	<link th:href="@{/css/product.css}" rel="stylesheet">
+</head>
+
+<body>
+	<main class="product-detail">
+		<p class="product-detail__title">商品詳細画面</p>
+		
+		<div class="product-detail__container">
+			
+			<div class="product-detail__item">
+				
+				<div class="product-detail__item--content">
+					<div class="product-detail__content--img-area">
+						<img th:src="@{/images/sample1.png}" alt="商品画像" class="product-detail__content--img">
+					</div>
+					<div class="product-detail__content--info">
+						<p>商品名：</p>
+						<p>メーカー名：</p>
+						<p>価格：</p>
+						<p>税込価格：</p>
+						<p>在庫数：</p>
+					</div>
+				</div>
+				
+				<div class="product-detail__item--review">
+					<p class="product-detail__review--title">＜口コミ＞</p>
+					
+					<div class="product-detail__review--content">
+						<div class="product-detail__review--left">
+							<p>ユーザー名：</p>
+							<p>コメント：</p>
+							<p>評価（5段階）：</p>
+						</div>
+						<div class="product-detail__review--right">
+							<p>投稿日時：</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="product-detail__button-area">
+					<div class="product-detail__button-wrap">
+						<a href="#" class="product-detail__button product-detail__button--buy">単品購入</a>
+					</div>	
+					<div class="product-detail__button-wrap">
+						<a href="#" class="product-detail__button product-detail__button--review">口コミ投稿</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="product-detail__cart">
+				<a href="#" class="product-detail__cart-button">カートに入れる</a>
+				
+				<div class="product-detail__quantity">
+					<label for="quantity">数量：</label>
+					<select id="quantity" name="quantity">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+					</select>
+				</div>
+				
+				<div class="product-detail__price-box">
+					<p>価格：</p>
+					<p>税込価格：</p>
+					<p>在庫価格：</p>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
