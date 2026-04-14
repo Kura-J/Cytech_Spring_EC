@@ -12,31 +12,38 @@
 		<p class="register__title">ユーザー新規登録画面</p>
 		
 		<div class="register__form">
+			<form th:action="@{/user/register}" method="post" th:object="${userForm}" novalidate>
 			
-			<div class="register__field">
-				<label for="name" class="register__label">ユーザ名</label>
-				<input type="text" id="name" name="name" class="register__input">
-			</div>
+				<div class="register__field">
+					<label for="name" class="register__label">ユーザ名</label>
+					<input type="text" id="name" th:field="*{name}" class="register__input">
+					<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color:red;"></p>
+				</div>
+				
+				<div class="register__field">
+					<label for="email" class="register__label">メールアドレス</label>
+					<input type="email" id="email" th:field="*{email}" class="register__input">
+					<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red;"></p>
+				</div>
+				
+				<div class="register__field">
+					<label for="password" class="register__label">パスワード</label>
+					<input type="password" id="password" th:field="*{password}" class="register__input">
+					<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color: red;"></p>
+				</div>
+				
+				<div class="register__field">
+					<label for="passwordConfirm" class="register__label">パスワード（確認用）</label>
+					<input type="password" id="passwordConfirm" th:field="*{passwordConfirm}" class="register__input">
+					<p th:if="${#fields.hasErrors('passwordConfirm')}" th:errors="*{passwordConfirm}" style="color: red;"></p>
+				</div>
+				
+				<div class="register__buttons">
+					<button type="submit" class="register__button register__button--submit">登録</button>
+					<a href="#" class="register__button register__button--back">戻る</a>
+				</div>
 			
-			<div class="register__field">
-				<label for="email" class="register__label">メールアドレス</label>
-				<input type="email" id="email" name="email" class="register__input">
-			</div>
-			
-			<div class="register__field">
-				<label for="password" class="register__label">パスワード</label>
-				<input type="password" id="password" name="password" class="register__input">
-			</div>
-			
-			<div class="register__field">
-				<label for="passwordConfirm" class="register__label">パスワード（確認用）</label>
-				<input type="password" id="passwordConfirm" name="passwordConfirm" class="register__input">
-			</div>
-			
-			<div class="register__buttons">
-				<a href="#" class="register__button register__button--submit">登録</a>
-				<a href="#" class="register__button register__button--back">戻る</a>
-			</div>
+			</form>
 		</div>
 	</main>
 </body>
