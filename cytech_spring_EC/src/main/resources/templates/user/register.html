@@ -12,7 +12,7 @@
 		<p class="register__title">ユーザー新規登録画面</p>
 		
 		<div class="register__form">
-			<form th:action="@{/user/register}" method="post" th:object="${userForm}" novalidate>
+			<form th:action="@{/user/register}" method="post" th:object="${registerForm}" novalidate>
 			
 				<div class="register__field">
 					<label for="name" class="register__label">ユーザ名</label>
@@ -40,7 +40,7 @@
 				
 				<div class="register__buttons">
 					<button type="submit" class="register__button register__button--submit">登録</button>
-					<a href="#" class="register__button register__button--back">戻る</a>
+					<a th:href="@{/user/login}" class="register__button register__button--back">戻る</a>
 				</div>
 			
 			</form>

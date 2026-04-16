@@ -11,21 +11,33 @@
 	<main class="login">
 		<p class="login__title">ログイン画面</p>
 		
-		<div class="login__form">
-			<div class="login__field">
-				<label for="email" class="login__label">メールアドレス</label>
-				<input type="email" id="email" name="email" class="login__input">
+		<form th:action="@{/user/login}" th:object="${loginForm}" method="post">
+		
+			<div class="login__form">
+				<div th:if="${#fields.hasGlobalErrors()}">
+					<p th:each="err : ${#fields.globalErrors()}" th:text="${err}"></p>
+				</div>
+				
+				<div class="login__field">
+					<label for="email" class="login__label">メールアドレス</label>
+					<input type="email" th:field="*{email}" class="login__input">
+					<p th:errors="*{email}" style="color: red;"></p>
+				</div>
+				
+				<div class="login__field">
+					<label for="password" class="login__label">パスワード</label>
+					<input type="password" th:field="*{password}" class="login__input">
+					<p th:errors="*{password}" style="color: red;"></p>
+				</div>
+				
+				<div class="login__buttons">
+					<button type="submit" class="login__button login__button--login">Login</button>
+					<a th:href="@{/user/register}" class="login__button login__button--register">新規登録</a>
+				</div>
 			</div>
-			<div class="login__field">
-				<label for="password" class="login__label">パスワード</label>
-				<input type="password" id="password" name="password" class="login__input">
-			</div>
-			
-			<div class="login__buttons">
-				<a href="#" class="login__button login__button--login">Login</a>
-				<a href="#" class="login__button login__button--register">新規登録</a>
-			</div>
-		</div>
+		
+		</form>
+		
 	</main>
 </body>
 </html>

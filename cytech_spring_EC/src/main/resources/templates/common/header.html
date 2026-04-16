@@ -12,19 +12,25 @@
 			<div class="header-logo">Cytech EC.</div>
 			
 			<div class="header-search">
-				<input type="text" class="search-input" placeholder="商品名">
-				
-				<select class="search-select">
-					<option>ファッション</option>
-				</select>
-				<button class="search-button">検索</button>
+				<form th:action="@{/product/list}" method="get">
+					<input type="text" name="productName" class="search-input" placeholder="商品名">
+					
+					<select name="categoryId" class="search-select">
+						<option value="">すべて</option>
+						<option th:each="category : ${categoryList}"
+								th:value="${category.categoryId}"
+								th:text="${category.categoryName}">
+						</option>
+					</select>
+					<button type="submit" class="search-button">検索</button>
+				</form>
 			</div>
 			
 			<div class="header-user">
 				<a href="#" class="header-mypage-button">マイページ</a>
 				<div class="user-info">
-					<p>ユーザ名：tetetetete</p>
-					<a href="#" class="logout-button">ログアウト</a>
+					<p>ユーザ名：<span th:text="${session.loginUserName}"></span></p>
+					<a th:href="@{/logout}" class="logout-button">ログアウト</a>
 				</div>
 			</div>
 			
@@ -33,3 +39,32 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

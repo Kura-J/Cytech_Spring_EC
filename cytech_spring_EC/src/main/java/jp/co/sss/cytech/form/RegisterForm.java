@@ -5,23 +5,23 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
-public class UserForm {
+public class RegisterForm {
 	
-	@NotBlank(message = "{user.name.required}")
+	@NotBlank(message = "{register.name.required}")
 	private String name;
 	
-	@NotBlank(message = "{user.email.required}")
-	@Email(message = "{user.email.format}")
+	@NotBlank(message = "{register.email.required}")
+	@Email(message = "{register.email.format}")
 	private String email;
 	
-	@NotBlank(message = "{user.password.required}")
-	@Size(min = 8, message = "{user.password.size}")
-	@Pattern(regexp = "^[a-zA-Z0-9]+$", message = "{user.password.pattern}")
+	@NotBlank(message = "{register.password.required}")
+	@Size(min = 8, message = "{register.password.size}")
+	@Pattern(regexp = "^[a-zA-Z0-9]+$", message = "{register.password.pattern}")
 	private String password;
 	
-	@NotBlank(message = "{user.passwordConfirm.required}")
-	@Size(min = 8, message = "{user.password.size}")
-	@Pattern(regexp = "^[a-zA-Z0-9]+$", message = "{user.password.pattern}")
+	@NotBlank(message = "{register.passwordConfirm.required}")
+	@Size(min = 8, message = "{register.password.size}")
+	@Pattern(regexp = "^[a-zA-Z0-9]+$", message = "{register.password.pattern}")
 	private String passwordConfirm;
 	
 	public String getName() {

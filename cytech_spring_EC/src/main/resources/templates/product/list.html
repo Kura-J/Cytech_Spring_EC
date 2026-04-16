@@ -13,62 +13,14 @@
 		
 		<div class="product-list__container">
 			
-			<div class="product-list__card">
+			<div class="product-list__card" th:each="product : ${productList}">
 				<a href="#">
-					<img th:src="@{/images/sample1.png}" alt="商品1">
+					<img th:src="@{${product.imgPath}}" alt="商品1">
 					<div class="product-list__card--content">
-						<p>商品名</p>
-						<p>メーカー名</p>
-						<p>¥2000</p>
-						<p>¥2200(税込)</p>
-					</div>
-				</a>
-			</div>
-			
-			<div class="product-list__card">
-				<a href="#">
-					<img th:src="@{/images/sample2.png}" alt="商品2">
-					<div class="product-list__card--content">
-						<p>商品名</p>
-						<p>メーカー名</p>
-						<p>¥2000</p>
-						<p>¥2200(税込)</p>
-					</div>
-				</a>
-			</div>
-			
-			<div class="product-list__card">
-				<a href="#">
-					<img th:src="@{/images/sample3.png}" alt="商品3">
-					<div class="product-list__card--content">
-						<p>商品名</p>
-						<p>メーカー名</p>
-						<p>¥2000</p>
-						<p>¥2200(税込)</p>
-					</div>
-				</a>
-			</div>
-			
-			<div class="product-list__card">
-				<a href="#">
-					<img th:src="@{/images/sample4.png}" alt="商品4">
-					<div class="product-list__card--content">
-						<p>商品名</p>
-						<p>メーカー名</p>
-						<p>¥2000</p>
-						<p>¥2200(税込)</p>
-					</div>
-				</a>
-			</div>
-			
-			<div class="product-list__card">
-				<a href="#">
-					<img th:src="@{/images/sample5.png}" alt="商品5">
-					<div class="product-list__card--content">
-						<p>商品名</p>
-						<p>メーカー名</p>
-						<p>¥2000</p>
-						<p>¥2200(税込)</p>
+						<p th:text="${product.productName}"></p>
+						<p th:text="${product.company.companyName}"></p>
+						<p th:text="'¥' + ${product.price}"></p>
+						<p th:text="'¥' + ${product.taxPrice} + '(税込)'"></p>
 					</div>
 				</a>
 			</div>

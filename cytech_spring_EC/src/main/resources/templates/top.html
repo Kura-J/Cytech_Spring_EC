@@ -15,33 +15,9 @@
 				<p class="sale-section__title">セール品</p>
 				
 				<div class="sale-section__list">
-					<div class="sale-section__item">
+					<div class="sale-section__item" th:each="saleItem : ${saleItemList}">
 						<a href="#">
-							<img th:src="@{/images/sample1.png}" alt="セール商品1">
-						</a>
-					</div>
-					
-					<div class="sale-section__item">
-						<a href="#">
-							<img th:src="@{/images/sample2.png}" alt="セール商品2">
-						</a>
-					</div>
-					
-					<div class="sale-section__item">
-						<a href="#">
-							<img th:src="@{/images/sample3.png}" alt="セール商品3">
-						</a>
-					</div>
-					
-					<div class="sale-section__item">
-						<a href="#">
-							<img th:src="@{/images/sample4.png}" alt="セール商品4">
-						</a>
-					</div>
-					
-					<div class="sale-section__item">
-						<a href="#">
-							<img th:src="@{/images/sample5.png}" alt="セール商品5">
+							<img th:src="@{${saleItem.salesImgPath}}" th:alt="${saleItem.saleName}">
 						</a>
 					</div>
 				</div>
