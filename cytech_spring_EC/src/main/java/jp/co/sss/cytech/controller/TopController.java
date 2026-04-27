@@ -17,11 +17,6 @@ public class TopController {
 	@Autowired
 	private SaleItemRepository saleItemRepository;
 	
-	@RequestMapping("/layout_view")
-	public String layout_view() {
-		return "layout_view";
-	}
-	
 	@RequestMapping("/top")
 	public String showTop(Model model) {
 		
@@ -31,7 +26,7 @@ public class TopController {
 		
 		model.addAttribute("saleItemList", saleItemList);
 		
-		return "top";
+		return "top/top";
 	}
 
 }

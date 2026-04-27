@@ -1,46 +1,46 @@
 @charset "UTF-8";
 
-.sale-detail {
+.order-detail {
 	width: 80%;
 	margin-left: 80px;
 }
 
-.sale-detail__title {
+.order-detail__title {
 	font-size: 24px;
 	margin-bottom: 50px;
 }
 
-.sale-detail__address {
+.order-detail__address {
 	margin-bottom: 40px;
 }
 
-.sale-detail__address-title {
+.order-detail__address-title {
 	margin-bottom: 15px;
 }
 
-.sale-detail__address-box,
-.sale-detail__card-box {
+.order-detail__address-box,
+.order-detail__card-box {
 	display: flex;
 	align-items: flex-start;
 	gap: 20px;
 	margin-bottom: 20px;
 }
 
-.sale-detail__address-content,
-.sale-detail__card-content {
+.order-detail__address-content,
+.order-detail__card-content {
 	width: 100%;
 	border: 1px solid #ccc;
 	padding: 20px;
 	border-radius: 8px;
 }
 
-.sale-detail__address-content label {
+.order-detail__address-content label {
 	display: block;
 	margin-top: 10px;
 }
 
-.sale-detail__address-content input,
-.sale-detail__card-content input {
+.order-detail__address-content input,
+.order-detail__card-content input {
 	width: 90%;
 	padding: 10px;
 	margin-top: 5px;
@@ -48,20 +48,20 @@
 	border-radius: 8px;
 }
 
-.sale-detail__card-content input {
+.order-detail__card-content input {
 	margin-bottom: 20px;
 }
 
-.sale-detail__card-content input:last-child {
+.order-detail__card-content input:last-child {
 	margin-bottom: 0;
 }
 
-.sale-detail__button-area {
+.order-detail__button-area {
 	text-align: left;
 	margin-top: 20px;
 }
 
-.sale-detail__button {
+.order-detail__button {
 	display: inline-block;
 	background-color: #2f80ed;
 	color: #fff;
@@ -73,28 +73,28 @@
 
 
 /* 購入品確認画面 */
-.sale-confirm {
+.order-confirm {
 	padding: 40px 50px 100px;
 }
 
-.sale-confirm__title {
+.order-confirm__title {
 	margin-bottom: 50px;
 	font-size: 24px;
 	font-weight: bold;
 }
 
-.sale-confirm__content p {
+.order-confirm__content p {
 	font-size: 14px;
 }
 
-.sale-confirm__buttons {
+.order-confirm__buttons {
 	margin-top: 80px;
 	display: flex;
 	gap: 50px;
 }
 
-.sale-confirm__button--edit,
-.sale-confirm__button--purchase {
+.order-confirm__button--edit,
+.order-confirm__button--purchase {
 	display: inline-block;
 	padding: 10px 36px;
 	border-radius: 8px;
@@ -103,47 +103,47 @@
 	color: white;
 }
 
-.sale-confirm__button--edit {
+.order-confirm__button--edit {
 	background-color: #ef4b4b;
 }
 
-.sale-confirm__button--purchase {
+.order-confirm__button--purchase {
 	background-color: #2d7df6;
 }
 
 
 /* 購入完了画面 */
-.sale-complete {
+.order-complete {
 	padding: 40px;
 }
 
-.sale-complete__title {
+.order-complete__title {
 	font-size: 24px;
 	margin-bottom: 50px;
 	font-weight: bold;
 }
 
-.sale-complete__finish {
+.order-complete__finish {
 	text-align: center;
 	font-size: 30px;
 	font-weight: bold;
 	margin-bottom: 60px;
 }
 
-.sale-complete__content {
+.order-complete__content {
 	max-width: 600px;
 	margin: 30px;
 }
 
-.sale-complete__content p {
+.order-complete__content p {
 	font-size: 14px;
 }
 
-.sale-complete__button-area {
+.order-complete__button-area {
 	text-align: center;
 }
 
-.sale-complete__button {
+.order-complete__button {
 	display: inline-block;
 	background-color: #2f80ed;
 	color: white;
@@ -151,6 +151,14 @@
 	border-radius: 8px;
 	text-decoration: none;
 	font-size: 14px;
+}
+
+.order-complete__image {
+	width: 450px;
+	height: 300px;
+	object-fit: cover;
+	display: block;
+	background-color: #d9d9d9;
 }
 
 

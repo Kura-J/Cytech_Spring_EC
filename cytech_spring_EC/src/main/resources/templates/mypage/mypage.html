@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{common/layout :: layout(~{::title}, ~{::body/content()}, ~{::head})}">
+
+<head>
+	<meta charset="UTF-8">
+	<title>マイページ</title>
+	<link th:href="@{/css/cart.css}" rel="stylesheet">
+</head>
+
+<body>
+	<main class="mypage">
+		<p class="mypage__title">マイページ</p>
+		
+		<div class="mypage__info">
+			<p>名前：<span th:text="${user.userName}"></span></p>
+			<p>よみがな：<span th:text="${user.userNameKana}"></span></p>
+			<p>電話番号：<span th:text="${user.phone}"></span></p>
+		</div>
+	</main>
+</body>
+</html>

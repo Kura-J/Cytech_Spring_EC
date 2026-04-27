@@ -17,59 +17,76 @@
 				
 				<div class="product-detail__item--content">
 					<div class="product-detail__content--img-area">
-						<img th:src="@{/images/sample1.png}" alt="商品画像" class="product-detail__content--img">
+						<img th:src="@{${product.imgPath}}" alt="商品画像" class="product-detail__content--img">
 					</div>
 					<div class="product-detail__content--info">
-						<p>商品名：</p>
-						<p>メーカー名：</p>
-						<p>価格：</p>
-						<p>税込価格：</p>
-						<p>在庫数：</p>
+						<p th:text="'商品名：' + ${product.productName}"></p>
+						<p th:text="'メーカー名：' + ${product.company.companyName}"></p>
+						<p th:text="'価格：' + ${product.price}"></p>
+						<p th:text="'税込価格：' + ${product.taxPrice}"></p>
+						<p th:text="'在庫数：' + ${product.stock}"></p>
 					</div>
 				</div>
 				
 				<div class="product-detail__item--review">
 					<p class="product-detail__review--title">＜口コミ＞</p>
 					
-					<div class="product-detail__review--content">
-						<div class="product-detail__review--left">
-							<p>ユーザー名：</p>
-							<p>コメント：</p>
-							<p>評価（5段階）：</p>
-						</div>
-						<div class="product-detail__review--right">
-							<p>投稿日時：</p>
+					<div th:if="${#lists.isEmpty(reviewList)}">
+						<p>口コミはありません</p>
+					</div>
+					
+					<div th:if="${!#lists.isEmpty(reviewList)}">
+						<div class="product-detail__review--content" th:each="review : ${reviewList}">
+							<div class="product-detail__review--left">
+								<p th:text="'ユーザー名：' + ${review.dummyUserName}"></p>
+								<p th:text="'コメント：' + ${review.comment}"></p>
+								<p>評価（5段階）：
+									<span th:each="i : ${#numbers.sequence(1, review.rating)}">★</span>
+									<span th:each="i : ${#numbers.sequence(1, 5 - review.rating)}">☆</span>
+								</p>
+							</div>
+							<div class="product-detail__review--right">
+								<p th:text="'投稿日時：' + ${review.createdAt}"></p>
+							</div>
 						</div>
 					</div>
+					
 				</div>
 				
 				<div class="product-detail__button-area">
 					<div class="product-detail__button-wrap">
-						<a href="#" class="product-detail__button product-detail__button--buy">単品購入</a>
+						<form th:action="@{/cart/buy}" method="post">
+							<input type="hidden" name="productId" th:value="${product.productId}">
+							<button type="submit" class="product-detail__button product-detail__button--buy">単品購入</button>
+						</form>
 					</div>	
 					<div class="product-detail__button-wrap">
-						<a href="#" class="product-detail__button product-detail__button--review">口コミ投稿</a>
+						<a th:href="@{/review/review(productId=${product.productId})}" class="product-detail__button product-detail__button--review">口コミ投稿</a>
 					</div>
 				</div>
 			</div>
 			
 			<div class="product-detail__cart">
-				<a href="#" class="product-detail__cart-button">カートに入れる</a>
-				
-				<div class="product-detail__quantity">
-					<label for="quantity">数量：</label>
-					<select id="quantity" name="quantity">
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-					</select>
-				</div>
-				
-				<div class="product-detail__price-box">
-					<p>価格：</p>
-					<p>税込価格：</p>
-					<p>在庫価格：</p>
-				</div>
+				<form th:action="@{/cart/add}" method="post">
+					<input type="hidden" name="productId" th:value="${product.productId}">
+					<button type="submit" class="product-detail__cart-button">カートに入れる</button>
+					
+					<div class="product-detail__quantity">
+						<label for="quantity">数量：</label>
+						<select id="quantity" name="quantity">
+							<option th:each="i : ${#numbers.sequence(1, product.stock)}"
+									th:value="${i}"
+									th:text="${i}">
+							</option>
+						</select>
+					</div>
+					
+					<div class="product-detail__price-box">
+						<p th:text="'価格：' + ${product.price}"></p>
+						<p th:text="'税込価格：' + ${product.taxPrice}"></p>
+						<p th:text="'在庫価格：' + ${product.stock}"></p>
+					</div>
+				</form>
 			</div>
 		</div>
 	</main>

@@ -27,7 +27,7 @@
 			</div>
 			
 			<div class="header-user">
-				<a href="#" class="header-mypage-button">マイページ</a>
+				<a th:href="@{/mypage}" class="header-mypage-button">マイページ</a>
 				<div class="user-info">
 					<p>ユーザ名：<span th:text="${session.loginUserName}"></span></p>
 					<a th:href="@{/logout}" class="logout-button">ログアウト</a>

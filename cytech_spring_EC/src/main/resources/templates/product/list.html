@@ -14,7 +14,7 @@
 		<div class="product-list__container">
 			
 			<div class="product-list__card" th:each="product : ${productList}">
-				<a href="#">
+				<a th:href="@{/product/detail(productId=${product.productId})}">
 					<img th:src="@{${product.imgPath}}" alt="商品1">
 					<div class="product-list__card--content">
 						<p th:text="${product.productName}"></p>

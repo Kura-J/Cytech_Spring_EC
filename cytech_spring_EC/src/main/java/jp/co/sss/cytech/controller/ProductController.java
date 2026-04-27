@@ -8,13 +8,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jp.co.sss.cytech.entity.Product;
+import jp.co.sss.cytech.entity.Review;
 import jp.co.sss.cytech.repository.ProductRepository;
+import jp.co.sss.cytech.repository.ReviewRepository;
 
 @Controller
 public class ProductController {
 	
 	@Autowired
 	ProductRepository productRepository;
+	
+	@Autowired
+	ReviewRepository reviewRepository; 
 	
 	@RequestMapping("/product/list")
 	public String showProducts(String productName, Integer categoryId, Model model) {
@@ -40,8 +45,41 @@ public class ProductController {
 	}
 	
 	@RequestMapping("/product/detail")
-	public String showDetail() {
+	public String showDetail(Integer productId, Model model) {
+		Product product = productRepository.findById(productId).orElse(null);
+		List<Review> reviewList = reviewRepository.findByProductId(productId);
+		
+		model.addAttribute("product", product);
+		model.addAttribute("reviewList", reviewList);
+		
 		return "product/detail";
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

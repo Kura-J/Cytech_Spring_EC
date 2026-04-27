@@ -165,8 +165,6 @@ public class Product {
 	public void setUpdatedAt(Timestamp updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	
-	
 
 }
 

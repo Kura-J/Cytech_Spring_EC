@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{common/layout :: layout(~{::title}, ~{::body/content()}, ~{::head})}">
+
+<head>
+	<meta charset="UTF-8">
+	<title>購入完了画面</title>
+	<link th:href="@{/css/order.css}" rel="stylesheet">
+</head>
+
+<body>
+	<main class="order-complete">
+		<p class="order-complete__title">購入完了画面</p>
+		
+		<p class="order-complete__finish">注文完了</p>
+		
+		<div class="order-complete__content">
+			<p>画像：
+				<img th:src="@{${product.imgPath}}" alt="商品画像" class="order-complete__image">
+			</p>
+			<p>商品名：
+				<span th:text="${product.productName}"></span>
+			</p>
+			<p>数量：
+				<span th:text="${orderItem.quantity}"></span>
+			</p>
+			<p>税込価格：
+				<span th:text="${order.totalAmount}"></span>
+			</p>
+			<p>住所：
+				<span th:text="${user.userAddress}"></span>
+			</p>
+		</div>
+		
+		<div class="order-complete__button-area">
+			<a th:href="@{/top}" class="order-complete__button">TOP画面に戻る</a>
+		</div>
+	</main>
+</body>
+</html>

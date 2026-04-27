@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{common/layout :: layout(~{::title}, ~{::body/content()}, ~{::head})}">
+
+<head>
+	<meta charset="UTF-8">
+	<title>購入品確認画面</title>
+	<link th:href="@{/css/order.css}" rel="stylesheet">
+</head>
+
+<body>
+	<main class="order-confirm">
+		<p class="order-confirm__title">購入品確認画面</p>
+		
+		<p th:if="${globalError}" th:text="${globalError}" style="color: red;"></p>
+		
+		<div class="order-confirm__content">
+			<p>名前：<span th:text="${user.userName}"></span></p>
+			<p>住所：<span th:text="${orderDetailForm.userAddress}"></span></p>
+			<p>アパート名：<span th:text="${orderDetailForm.apartmentName}"></span></p>
+			<p>商品名：<span th:text="${cart.product.productName}"></span></p>
+			<p>個数：<span th:text="${cart.quantity}"></span></p>
+			<p>合計金額：<span th:text="${cart.product.price * cart.quantity}"></span></p>
+		</div>
+		
+		<div class="order-confirm__buttons">
+			<form th:action="@{/order/detail/back}" method="post" style="display: inline;">
+				<input type="hidden" name="cartId" th:value="${orderDetailForm.cartId}">
+				<input type="hidden" name="userAddress" th:value="${orderDetailForm.userAddress}">
+				<input type="hidden" name="apartmentName" th:value="${orderDetailForm.apartmentName}">
+				<input type="hidden" name="cardNumber" th:value="${orderDetailForm.cardNumber}">
+				<input type="hidden" name="cardLimit" th:value="${orderDetailForm.cardLimit}">
+				
+				<button type="submit" class="order-confirm__button--edit">編集</button>
+			</form>
+			
+			<form th:action="@{/order/complete}" method="post" th:object="${orderDetailForm}" style="display: inline;">
+				
+				<input type="hidden" th:field="*{cartId}">
+				<input type="hidden" th:field="*{userAddress}">
+				<input type="hidden" th:field="*{apartmentName}">
+				<input type="hidden" th:field="*{cardNumber}">
+				<input type="hidden" th:field="*{cardLimit}">
+				<button type="submit" class="order-confirm__button--purchase">購入</button>
+			</form>
+		</div>
+	</main>
+</body>
+</html>

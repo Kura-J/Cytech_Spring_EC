@@ -55,6 +55,7 @@
 .cart-detail__container {
 	display: flex;
 	gap: 40px;
+	margin-bottom: 40px;
 }
 
 .cart-detail__item {
@@ -98,6 +99,7 @@
 	border-radius: 8px;
 	text-align: center;
 	font-size: 14px;
+	border: 1px solid black;
 }
 
 .btn-delete {
@@ -110,7 +112,7 @@
 	background-color: #007bff;
 	color: white;
 	margin-top: 20px;
-	width: 80px;
+	width: 120px;
 }
 
 

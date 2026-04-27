@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{common/layout :: layout(~{::title}, ~{::body/content()}, ~{::head})}">
+
+<head>
+	<meta charset="UTF-8">
+	<title>購入品詳細画面</title>
+	<link th:href="@{/css/order.css}" rel="stylesheet">
+</head>
+
+<body>
+	<main class="order-detail">
+		<p class="order-detail__title">購入品詳細画面</p>
+		
+		<form th:action="@{/order/confirm}" method="post" th:object="${orderDetailForm}">
+			
+			<input type="hidden" th:field="*{cartId}">
+			
+			<div class="order-detail__address">
+				<p class="order-detail__address-title">＜受け取り場所＞</p>
+				
+				<div class="order-detail__address-box">
+					<input type="radio" name="address" checked>
+					
+					<div class="order-detail__address-content">
+						<p>名前：<span th:text="${user.userName}"></span></p>
+						
+						<label>住所</label>
+						<input type="text" th:field="*{userAddress}" placeholder="住所">
+						<p th:if="${#fields.hasErrors('userAddress')}" th:errors="*{userAddress}" style="color: red;"></p>
+						
+						<label>アパート名等</label>
+						<input type="text" th:field="*{apartmentName}" placeholder="アパート名等">
+						<p th:if="${#fields.hasErrors('apartmentName')}" th:errors="*{apartmentName}" style="color: red;"></p>
+					</div>
+				</div>
+				
+				<div class="order-detail__address-box">
+					<input type="radio" name="address">
+					
+					<div class="order-detail__address-content">
+						<p>名前：<span th:text="${user.userName}"></span></p>
+						
+						<label>住所</label>
+						<input type="text" placeholder="住所">
+						
+						<label>アパート名等</label>
+						<input type="text" placeholder="アパート名等">
+					</div>
+				</div>
+			</div>
+			
+			<div class="order-detail__card">
+				<p class="order-detail__card-title">＜お支払い情報＞</p>
+				
+				<div class="order-detail__card-box">
+					<input type="radio" name="card" checked>
+					
+					<div class="order-detail__card-content">
+						<input type="text" th:field="*{cardNumber}" placeholder="カード番号">
+						<p th:if="${#fields.hasErrors('cardNumber')}" th:errors="*{cardNumber}" style="color: red;"></p>
+						<input type="text" th:field="*{cardLimit}" placeholder="有効期限 DD/YY">
+						<p th:if="${#fields.hasErrors('cardLimit')}" th:errors="*{cardLimit}" style="color: red;"></p>
+					</div>
+				</div>
+				
+				<div class="order-detail__card-box">
+					<input type="radio" name="card">
+					
+					<div class="order-detail__card-content">
+						<input type="text" placeholder="カード番号">
+						<input type="text" placeholder="有効期限 DD/YY">
+					</div>
+				</div>
+			</div>
+			
+			<div class="order-detail__button-area">
+				<button type="submit" class="order-detail__button">確認</button>
+			</div>
+		</form>
+	</main>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

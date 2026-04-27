@@ -16,7 +16,7 @@
 				
 				<div class="sale-section__list">
 					<div class="sale-section__item" th:each="saleItem : ${saleItemList}">
-						<a href="#">
+						<a th:href="@{/product/detail(productId=${saleItem.productId})}">
 							<img th:src="@{${saleItem.salesImgPath}}" th:alt="${saleItem.saleName}">
 						</a>
 					</div>

@@ -11,41 +11,49 @@
 	<main class="review">
 		<p class="review__title">口コミ投稿画面</p>
 		
-		<div class="review__form">
-			<div class="review__field">
-				<label class="review__label">ユーザー名（任意）</label>
-				<input type="text" class="review__input" placeholder="ユーザー名">
+		<form th:action="@{/review/review}" th:object="${reviewForm}" method="post" enctype="multipart/form-data">
+			<div class="review__form">
+				
+				<input type="hidden" th:field="*{productId}">
+				
+				<div class="review__field">
+					<label class="review__label">ユーザー名（任意）</label>
+					<input type="text" class="review__input" placeholder="ユーザー名" th:field="*{dummyUserName}">
+					<p th:errors="*{dummyUserName}" style="color: red;"></p>
+				</div>
+				
+				<div class="review__field">
+					<label class="review__label">評価</label>
+					<select class="review__select" th:field="*{rating}">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+				</div>
+				
+				<div class="review__field">
+					<label class="review__label">メールアドレス</label>
+					<input type="text" class="review__input" placeholder="メールアドレス" th:field="*{email}">
+					<p th:errors="*{email}" style="color: red;"></p>
+				</div>
+				
+				<div class="review__field">
+					<label class="review__label">コメント</label>
+					<textarea class="review__textarea" th:field="*{comment}"></textarea>
+					<p th:errors="*{comment}" style="color: red;"></p>
+				</div>
+				
+				<div class="review__field">
+					<input type="file" class="review__file" th:field="*{reviewImage}">
+				</div>
+				
+				<div class="review__button-area">
+					<button type="submit" class="review__button">投稿</button>
+				</div>
 			</div>
-			
-			<div class="review__field">
-				<label class="review__label">評価</label>
-				<select class="review__select">
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-				</select>
-			</div>
-			
-			<div class="review__field">
-				<label class="review__label">メールアドレス</label>
-				<input type="text" class="review__input" placeholder="メールアドレス">
-			</div>
-			
-			<div class="review__field">
-				<label class="review__label">コメント</label>
-				<textarea class="review__textarea"></textarea>
-			</div>
-			
-			<div class="review__field">
-				<input type="file" class="review__file">
-			</div>
-			
-			<div class="review__button-area">
-				<a href="#" class="review__button">投稿</a>
-			</div>
-		</div>
+		</form>
 	</main>
 </body>
 </html>
